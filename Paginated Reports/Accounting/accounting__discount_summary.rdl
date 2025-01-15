@@ -1,0 +1,1016 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report MustUnderstand="df" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:df="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition/defaultfontfamily" xmlns:am="http://schemas.microsoft.com/sqlserver/reporting/authoringmetadata">
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>2bb0cf9f-4129-4176-9e2c-051226b8e7af</rd:ReportID>
+  <am:AuthoringMetadata>
+    <am:CreatedBy>
+      <am:Name>PBIRB</am:Name>
+      <am:Version>15.7.1811.11</am:Version>
+    </am:CreatedBy>
+    <am:UpdatedBy>
+      <am:Name>PBIRB</am:Name>
+      <am:Version>15.7.1813.16</am:Version>
+    </am:UpdatedBy>
+    <am:LastModifiedTimestamp>2024-10-04T13:03:12.7074721Z</am:LastModifiedTimestamp>
+  </am:AuthoringMetadata>
+  <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource1">
+      <rd:SecurityType>DataBase</rd:SecurityType>
+      <ConnectionProperties>
+        <DataProvider>ODBC</DataProvider>
+        <ConnectString>Dsn=SnowflakeAnalytics</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>a46ef523-b648-488c-a8bd-35eec6365828</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <DataSourceName>DataSource1</DataSourceName>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <CommandText>select 
+    fct_shipped_revenue.*
+    ,dim_orders.company_name
+    ,dim_orders.company_group
+    ,dim_orders.company_city
+    ,dim_orders.company_state
+    ,dim_orders.company_country
+    ,dim_orders.company_zip
+    ,dim_orders.customer_status_id
+    ,dim_orders.customer_since_date
+    ,dim_orders.customer_last_order_date
+    ,dim_orders.ship_to_company
+    ,dim_orders.ship_to_company_group
+    ,dim_orders.ship_to_city
+    ,dim_orders.ship_to_state
+    ,dim_orders.bill_to_company
+    ,dim_orders.bill_to_city
+    ,dim_orders.bill_to_state
+    ,dim_inventory.item_class
+    ,dim_inventory.item_number
+    ,dim_inventory.item_description
+    ,dim_inventory.item_extended_description
+    ,nvl(dim_inventory.product_group, 'Other') as product_group
+    ,dim_inventory.product_model
+    ,dim_inventory.configuration_code
+    ,dim_inventory.default_bom_number
+    ,dim_inventory.default_bom_description
+    ,dim_inventory.unit_of_measure
+    ,dim_inventory.onhand_qty
+    ,dim_inventory.non_conform_qty
+    ,dim_inventory.non_allocate_qty
+    ,dim_inventory.lead_days
+    ,dim_inventory.min_order_qty
+    ,dim_inventory.max_order_qty
+    ,dim_inventory.reorder_point_qty
+    ,dim_inventory.safety_stock_qty
+    ,dim_inventory.po_safety_stock_qty
+    ,dim_inventory.po_scope
+    ,dim_inventory.po_range
+    ,dim_inventory.standard_cost
+    ,dim_inventory.is_backflush
+    ,dim_inventory.is_make_to_order_item
+    ,dim_inventory.is_non_material
+    ,dim_inventory.is_not_for_sale
+    ,dim_inventory.is_phantom_item
+    ,dim_inventory.item_status
+    ,dim_inventory.created_by
+    ,dim_inventory.created_at
+    ,dim_inventory.last_consumed_at
+    ,dim_inventory.first_consumed_at
+    ,dim_inventory.last_count_at
+    ,dim_dates.calendar_date
+    ,dim_dates.calendar_year
+    ,dim_dates.fiscal_year
+    ,dim_dates.fiscal_period
+    ,dim_dates.fiscal_year || ', ' || LPAD(fiscal_period, 2, '0') as fiscal_hierarchy
+    ,dim_dates.calendar_month
+    ,dim_dates.calendar_month_name
+    ,dim_dates.calendar_day_of_month
+    ,dim_dates.calendar_day_of_month_iso
+    ,dim_dates.calendar_week_of_year
+    ,dim_dates.calendar_day_of_year
+
+from dbt_finance.fct_shipped_revenue fct_shipped_revenue
+left outer join dbt_sales.dim_orders dim_orders
+	on fct_shipped_revenue.order_id = dim_orders.order_id
+left outer join dbt_core.dim_inventory dim_inventory
+	on fct_shipped_revenue.inventory_id = dim_inventory.inventory_id
+left outer join dbt_core.dim_dates dim_dates
+	on fct_shipped_revenue.ship_date_dim_dates_id = dim_dates.dim_dates_id
+    ;</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ORDER_ID">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>ORDER_ID</DataField>
+        </Field>
+        <Field Name="ORDER_DETAIL_ID">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>ORDER_DETAIL_ID</DataField>
+        </Field>
+        <Field Name="INVENTORY_ID">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>INVENTORY_ID</DataField>
+        </Field>
+        <Field Name="SHIP_DATE_DIM_DATES_ID">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>SHIP_DATE_DIM_DATES_ID</DataField>
+        </Field>
+        <Field Name="SHIP_DATE">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>SHIP_DATE</DataField>
+        </Field>
+        <Field Name="TOTAL_QTY_ORD">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>TOTAL_QTY_ORD</DataField>
+        </Field>
+        <Field Name="TOTAL_RELEASED_QTY">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>TOTAL_RELEASED_QTY</DataField>
+        </Field>
+        <Field Name="TOTAL_QUANTITY_SHIPPED">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>TOTAL_QUANTITY_SHIPPED</DataField>
+        </Field>
+        <Field Name="MATERIAL_STANDARD_COST">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>MATERIAL_STANDARD_COST</DataField>
+        </Field>
+        <Field Name="DIRECT_LABOR_STANDARD_COST">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>DIRECT_LABOR_STANDARD_COST</DataField>
+        </Field>
+        <Field Name="VARIABLE_OVERHEAD_STANDARD_COST">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>VARIABLE_OVERHEAD_STANDARD_COST</DataField>
+        </Field>
+        <Field Name="FIXED_OVERHEAD_STANDARD_COST">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>FIXED_OVERHEAD_STANDARD_COST</DataField>
+        </Field>
+        <Field Name="OUTSOURCE_STANDARD_COST">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>OUTSOURCE_STANDARD_COST</DataField>
+        </Field>
+        <Field Name="FINISHED_GOODS_STANDARD_COST">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>FINISHED_GOODS_STANDARD_COST</DataField>
+        </Field>
+        <Field Name="LIST_UNIT_PRICE">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>LIST_UNIT_PRICE</DataField>
+        </Field>
+        <Field Name="DISCOUNT_PERCENT">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>DISCOUNT_PERCENT</DataField>
+        </Field>
+        <Field Name="UNIT_PRICE">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>UNIT_PRICE</DataField>
+        </Field>
+        <Field Name="SHIPPED_LIST_UNIT_PRICE">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>SHIPPED_LIST_UNIT_PRICE</DataField>
+        </Field>
+        <Field Name="SHIPPED_UNIT_PRICE">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>SHIPPED_UNIT_PRICE</DataField>
+        </Field>
+        <Field Name="SHIPPED_DISCOUNT_AMOUNT">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>SHIPPED_DISCOUNT_AMOUNT</DataField>
+        </Field>
+        <Field Name="SHIPPED_STANDARD_COST">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>SHIPPED_STANDARD_COST</DataField>
+        </Field>
+        <Field Name="MARGIN_AT_STANDARD">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>MARGIN_AT_STANDARD</DataField>
+        </Field>
+        <Field Name="COMPANY_NAME">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>COMPANY_NAME</DataField>
+        </Field>
+        <Field Name="COMPANY_GROUP">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>COMPANY_GROUP</DataField>
+        </Field>
+        <Field Name="COMPANY_CITY">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>COMPANY_CITY</DataField>
+        </Field>
+        <Field Name="COMPANY_STATE">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>COMPANY_STATE</DataField>
+        </Field>
+        <Field Name="COMPANY_COUNTRY">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>COMPANY_COUNTRY</DataField>
+        </Field>
+        <Field Name="COMPANY_ZIP">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>COMPANY_ZIP</DataField>
+        </Field>
+        <Field Name="CUSTOMER_STATUS_ID">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CUSTOMER_STATUS_ID</DataField>
+        </Field>
+        <Field Name="CUSTOMER_SINCE_DATE">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>CUSTOMER_SINCE_DATE</DataField>
+        </Field>
+        <Field Name="CUSTOMER_LAST_ORDER_DATE">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>CUSTOMER_LAST_ORDER_DATE</DataField>
+        </Field>
+        <Field Name="SHIP_TO_COMPANY">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>SHIP_TO_COMPANY</DataField>
+        </Field>
+        <Field Name="SHIP_TO_COMPANY_GROUP">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>SHIP_TO_COMPANY_GROUP</DataField>
+        </Field>
+        <Field Name="SHIP_TO_CITY">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>SHIP_TO_CITY</DataField>
+        </Field>
+        <Field Name="SHIP_TO_STATE">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>SHIP_TO_STATE</DataField>
+        </Field>
+        <Field Name="BILL_TO_COMPANY">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>BILL_TO_COMPANY</DataField>
+        </Field>
+        <Field Name="BILL_TO_CITY">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>BILL_TO_CITY</DataField>
+        </Field>
+        <Field Name="BILL_TO_STATE">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>BILL_TO_STATE</DataField>
+        </Field>
+        <Field Name="ITEM_CLASS">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ITEM_CLASS</DataField>
+        </Field>
+        <Field Name="ITEM_NUMBER">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ITEM_NUMBER</DataField>
+        </Field>
+        <Field Name="ITEM_DESCRIPTION">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ITEM_DESCRIPTION</DataField>
+        </Field>
+        <Field Name="ITEM_EXTENDED_DESCRIPTION">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ITEM_EXTENDED_DESCRIPTION</DataField>
+        </Field>
+        <Field Name="PRODUCT_GROUP">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>PRODUCT_GROUP</DataField>
+        </Field>
+        <Field Name="PRODUCT_MODEL">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>PRODUCT_MODEL</DataField>
+        </Field>
+        <Field Name="CONFIGURATION_CODE">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CONFIGURATION_CODE</DataField>
+        </Field>
+        <Field Name="DEFAULT_BOM_NUMBER">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>DEFAULT_BOM_NUMBER</DataField>
+        </Field>
+        <Field Name="DEFAULT_BOM_DESCRIPTION">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>DEFAULT_BOM_DESCRIPTION</DataField>
+        </Field>
+        <Field Name="UNIT_OF_MEASURE">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>UNIT_OF_MEASURE</DataField>
+        </Field>
+        <Field Name="ONHAND_QTY">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>ONHAND_QTY</DataField>
+        </Field>
+        <Field Name="NON_CONFORM_QTY">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>NON_CONFORM_QTY</DataField>
+        </Field>
+        <Field Name="NON_ALLOCATE_QTY">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>NON_ALLOCATE_QTY</DataField>
+        </Field>
+        <Field Name="LEAD_DAYS">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>LEAD_DAYS</DataField>
+        </Field>
+        <Field Name="MIN_ORDER_QTY">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>MIN_ORDER_QTY</DataField>
+        </Field>
+        <Field Name="MAX_ORDER_QTY">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>MAX_ORDER_QTY</DataField>
+        </Field>
+        <Field Name="REORDER_POINT_QTY">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>REORDER_POINT_QTY</DataField>
+        </Field>
+        <Field Name="SAFETY_STOCK_QTY">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>SAFETY_STOCK_QTY</DataField>
+        </Field>
+        <Field Name="PO_SAFETY_STOCK_QTY">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>PO_SAFETY_STOCK_QTY</DataField>
+        </Field>
+        <Field Name="PO_SCOPE">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>PO_SCOPE</DataField>
+        </Field>
+        <Field Name="PO_RANGE">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>PO_RANGE</DataField>
+        </Field>
+        <Field Name="STANDARD_COST">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>STANDARD_COST</DataField>
+        </Field>
+        <Field Name="IS_BACKFLUSH">
+          <rd:TypeName>System.Boolean</rd:TypeName>
+          <DataField>IS_BACKFLUSH</DataField>
+        </Field>
+        <Field Name="IS_MAKE_TO_ORDER_ITEM">
+          <rd:TypeName>System.Boolean</rd:TypeName>
+          <DataField>IS_MAKE_TO_ORDER_ITEM</DataField>
+        </Field>
+        <Field Name="IS_NON_MATERIAL">
+          <rd:TypeName>System.Boolean</rd:TypeName>
+          <DataField>IS_NON_MATERIAL</DataField>
+        </Field>
+        <Field Name="IS_NOT_FOR_SALE">
+          <rd:TypeName>System.Boolean</rd:TypeName>
+          <DataField>IS_NOT_FOR_SALE</DataField>
+        </Field>
+        <Field Name="IS_PHANTOM_ITEM">
+          <rd:TypeName>System.Boolean</rd:TypeName>
+          <DataField>IS_PHANTOM_ITEM</DataField>
+        </Field>
+        <Field Name="ITEM_STATUS">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ITEM_STATUS</DataField>
+        </Field>
+        <Field Name="CREATED_BY">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CREATED_BY</DataField>
+        </Field>
+        <Field Name="CREATED_AT">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>CREATED_AT</DataField>
+        </Field>
+        <Field Name="LAST_CONSUMED_AT">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>LAST_CONSUMED_AT</DataField>
+        </Field>
+        <Field Name="FIRST_CONSUMED_AT">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>FIRST_CONSUMED_AT</DataField>
+        </Field>
+        <Field Name="LAST_COUNT_AT">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>LAST_COUNT_AT</DataField>
+        </Field>
+        <Field Name="CALENDAR_DATE">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>CALENDAR_DATE</DataField>
+        </Field>
+        <Field Name="CALENDAR_YEAR">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>CALENDAR_YEAR</DataField>
+        </Field>
+        <Field Name="FISCAL_YEAR">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>FISCAL_YEAR</DataField>
+        </Field>
+        <Field Name="FISCAL_PERIOD">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>FISCAL_PERIOD</DataField>
+        </Field>
+        <Field Name="FISCAL_HIERARCHY">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>FISCAL_HIERARCHY</DataField>
+        </Field>
+        <Field Name="CALENDAR_MONTH">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>CALENDAR_MONTH</DataField>
+        </Field>
+        <Field Name="CALENDAR_MONTH_NAME">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CALENDAR_MONTH_NAME</DataField>
+        </Field>
+        <Field Name="CALENDAR_DAY_OF_MONTH">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>CALENDAR_DAY_OF_MONTH</DataField>
+        </Field>
+        <Field Name="CALENDAR_DAY_OF_MONTH_ISO">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>CALENDAR_DAY_OF_MONTH_ISO</DataField>
+        </Field>
+        <Field Name="CALENDAR_WEEK_OF_YEAR">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>CALENDAR_WEEK_OF_YEAR</DataField>
+        </Field>
+        <Field Name="CALENDAR_DAY_OF_YEAR">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>CALENDAR_DAY_OF_YEAR</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Tablix Name="Tablix2">
+            <TablixCorner>
+              <TablixCornerRows>
+                <TablixCornerRow>
+                  <TablixCornerCell>
+                    <CellContents>
+                      <Textbox Name="Textbox16">
+                        <rd:DefaultName>Textbox16</rd:DefaultName>
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>FISCAL YEAR</Value>
+                                <Style>
+                                  <FontSize>8pt</FontSize>
+                                  <FontWeight>Bold</FontWeight>
+                                  <Color>#666666</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <Style>
+                          <Border>
+                            <Style>None</Style>
+                          </Border>
+                          <BottomBorder>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                            <Width>1pt</Width>
+                          </BottomBorder>
+                          <BackgroundColor>White</BackgroundColor>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixCornerCell>
+                  <TablixCornerCell>
+                    <CellContents>
+                      <Textbox Name="Textbox9">
+                        <rd:DefaultName>Textbox9</rd:DefaultName>
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>FISCAL PERIOD</Value>
+                                <Style>
+                                  <FontSize>8pt</FontSize>
+                                  <FontWeight>Bold</FontWeight>
+                                  <Color>#666666</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <Style>
+                          <Border>
+                            <Style>None</Style>
+                          </Border>
+                          <BottomBorder>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                            <Width>1pt</Width>
+                          </BottomBorder>
+                          <BackgroundColor>White</BackgroundColor>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixCornerCell>
+                </TablixCornerRow>
+              </TablixCornerRows>
+            </TablixCorner>
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>0.85417in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.19444in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="SHIPPED_DISCOUNT_AMOUNT">
+                          <rd:DefaultName>SHIPPED_DISCOUNT_AMOUNT</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!SHIPPED_DISCOUNT_AMOUNT.Value)</Value>
+                                  <Style>
+                                    <FontSize>7pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Format>'$'#,0.00;('$'#,0.00)</Format>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.19444in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox12">
+                          <rd:DefaultName>Textbox12</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!SHIPPED_DISCOUNT_AMOUNT.Value)</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>'$'#,0.00;('$'#,0.00)</Format>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="PRODUCT_GROUP">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!PRODUCT_GROUP.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!PRODUCT_GROUP.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixHeader>
+                    <Size>0.19444in</Size>
+                    <CellContents>
+                      <Textbox Name="PRODUCT_GROUP">
+                        <rd:DefaultName>PRODUCT_GROUP</rd:DefaultName>
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=Fields!PRODUCT_GROUP.Value</Value>
+                                <Style>
+                                  <FontSize>8pt</FontSize>
+                                  <FontWeight>Normal</FontWeight>
+                                  <Color>#333333</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <Style>
+                          <Border>
+                            <Style>None</Style>
+                          </Border>
+                          <BottomBorder>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                            <Width>1pt</Width>
+                          </BottomBorder>
+                          <BackgroundColor>White</BackgroundColor>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember />
+                  </TablixMembers>
+                </TablixMember>
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="FISCAL_YEAR">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!FISCAL_YEAR.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!FISCAL_YEAR.Value</Value>
+                      <Direction>Descending</Direction>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixHeader>
+                    <Size>0.51042in</Size>
+                    <CellContents>
+                      <Textbox Name="FISCAL_YEAR">
+                        <rd:DefaultName>FISCAL_YEAR</rd:DefaultName>
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=Fields!FISCAL_YEAR.Value</Value>
+                                <Style>
+                                  <FontSize>7pt</FontSize>
+                                  <FontWeight>Normal</FontWeight>
+                                  <Color>#333333</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <Style>
+                          <Border>
+                            <Style>None</Style>
+                          </Border>
+                          <BottomBorder>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                            <Width>1pt</Width>
+                          </BottomBorder>
+                          <BackgroundColor>White</BackgroundColor>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember>
+                      <Group Name="FISCAL_PERIOD">
+                        <GroupExpressions>
+                          <GroupExpression>=Fields!FISCAL_PERIOD.Value</GroupExpression>
+                        </GroupExpressions>
+                      </Group>
+                      <SortExpressions>
+                        <SortExpression>
+                          <Value>=Fields!FISCAL_PERIOD.Value</Value>
+                          <Direction>Descending</Direction>
+                        </SortExpression>
+                      </SortExpressions>
+                      <TablixHeader>
+                        <Size>0.76042in</Size>
+                        <CellContents>
+                          <Textbox Name="FISCAL_PERIOD">
+                            <rd:DefaultName>FISCAL_PERIOD</rd:DefaultName>
+                            <CanGrow>true</CanGrow>
+                            <KeepTogether>true</KeepTogether>
+                            <Paragraphs>
+                              <Paragraph>
+                                <TextRuns>
+                                  <TextRun>
+                                    <Value>=Fields!FISCAL_PERIOD.Value</Value>
+                                    <Style>
+                                      <FontSize>7pt</FontSize>
+                                      <FontWeight>Normal</FontWeight>
+                                      <Color>#333333</Color>
+                                    </Style>
+                                  </TextRun>
+                                </TextRuns>
+                                <Style>
+                                  <TextAlign>Center</TextAlign>
+                                </Style>
+                              </Paragraph>
+                            </Paragraphs>
+                            <Style>
+                              <Border>
+                                <Style>None</Style>
+                              </Border>
+                              <BottomBorder>
+                                <Color>LightGrey</Color>
+                                <Style>Solid</Style>
+                                <Width>1pt</Width>
+                              </BottomBorder>
+                              <BackgroundColor>White</BackgroundColor>
+                              <PaddingLeft>2pt</PaddingLeft>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                              <PaddingBottom>2pt</PaddingBottom>
+                            </Style>
+                          </Textbox>
+                        </CellContents>
+                      </TablixHeader>
+                      <TablixMembers>
+                        <TablixMember />
+                      </TablixMembers>
+                    </TablixMember>
+                  </TablixMembers>
+                </TablixMember>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>0.51042in</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox18">
+                        <rd:DefaultName>Textbox18</rd:DefaultName>
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value />
+                                <Style>
+                                  <FontSize>8pt</FontSize>
+                                  <FontWeight>Bold</FontWeight>
+                                  <Color>#333333</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <Style>
+                          <Border>
+                            <Style>None</Style>
+                          </Border>
+                          <BackgroundColor>White</BackgroundColor>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember>
+                      <TablixHeader>
+                        <Size>0.76042in</Size>
+                        <CellContents>
+                          <Textbox Name="Textbox11">
+                            <rd:DefaultName>Textbox11</rd:DefaultName>
+                            <CanGrow>true</CanGrow>
+                            <KeepTogether>true</KeepTogether>
+                            <Paragraphs>
+                              <Paragraph>
+                                <TextRuns>
+                                  <TextRun>
+                                    <Value>Total</Value>
+                                    <Style>
+                                      <FontSize>8pt</FontSize>
+                                      <FontWeight>Bold</FontWeight>
+                                      <Color>#333333</Color>
+                                    </Style>
+                                  </TextRun>
+                                </TextRuns>
+                                <Style>
+                                  <TextAlign>Center</TextAlign>
+                                </Style>
+                              </Paragraph>
+                            </Paragraphs>
+                            <Style>
+                              <Border>
+                                <Style>None</Style>
+                              </Border>
+                              <BackgroundColor>White</BackgroundColor>
+                              <PaddingLeft>2pt</PaddingLeft>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                              <PaddingBottom>2pt</PaddingBottom>
+                            </Style>
+                          </Textbox>
+                        </CellContents>
+                      </TablixHeader>
+                    </TablixMember>
+                  </TablixMembers>
+                  <KeepWithGroup>Before</KeepWithGroup>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <RepeatColumnHeaders>true</RepeatColumnHeaders>
+            <KeepTogether>true</KeepTogether>
+            <DataSetName>DataSet1</DataSetName>
+            <Top>0.46528in</Top>
+            <Height>0.58332in</Height>
+            <Width>2.12501in</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+          <Textbox Name="ReportTitle">
+            <rd:WatermarkTextbox>Title</rd:WatermarkTextbox>
+            <rd:DefaultName>ReportTitle</rd:DefaultName>
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Discount Summary Report</Value>
+                    <Style>
+                      <FontFamily>Arial</FontFamily>
+                      <FontSize>28pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Height>0.4375in</Height>
+            <Width>5.30208in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+        </ReportItems>
+        <Height>1.06597in</Height>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Body>
+      <Width>5.57292in</Width>
+      <Page>
+        <PageFooter>
+          <Height>0.45in</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="ExecutionTime">
+              <rd:DefaultName>ExecutionTime</rd:DefaultName>
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Globals!ExecutionTime</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>0.06944in</Top>
+              <Left>3.57292in</Left>
+              <Height>0.21875in</Height>
+              <Width>1.72917in</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
+        <PageHeight>8.5in</PageHeight>
+        <PageWidth>11in</PageWidth>
+        <LeftMargin>0.125in</LeftMargin>
+        <RightMargin>0.125in</RightMargin>
+        <TopMargin>0.125in</TopMargin>
+        <BottomMargin>0.125in</BottomMargin>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
+  <EmbeddedImages>
+    <EmbeddedImage Name="logoretina1">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+</Report>
