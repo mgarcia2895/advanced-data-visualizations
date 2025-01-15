@@ -1,0 +1,866 @@
+{
+  "compatibilityLevel": 1567,
+  "model": {
+    "annotations": [
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.139.1576.0 (24.12)+cf7e324bca3ba1dbdfd6f0ddf9a53321538e996d"
+      },
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"_V_PRODUCTION_STATUS_RPT\",\"DATE_DIM\",\"Measure Table\"]"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      }
+    ],
+    "culture": "en-US",
+    "cultures": [
+      {
+        "name": "en-US",
+        "linguisticMetadata": {
+          "content": {
+            "Language": "en-US",
+            "Version": "1.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "relationships": [
+      {
+        "name": "73044fa2-ad52-4433-a704-44301ec28aaf",
+        "fromColumn": "Date Work Order Created",
+        "fromTable": "_V_PRODUCTION_STATUS_RPT",
+        "toColumn": "DATE",
+        "toTable": "DATE_DIM"
+      }
+    ],
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "_V_PRODUCTION_STATUS_RPT",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Exception"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Work Order #",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isText\":true}"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DataType"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c8342404-e1ef-4ae0-b40b-ac8961905157",
+            "sourceColumn": "Work Order #",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Item #",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isText\":true}"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "edf9148f-7ecc-4a34-a682-6f4f21c4d2a7",
+            "sourceColumn": "Item #",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Date Work Order Created",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isDateTimeCustom\":true}"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "mm/dd/yyyy",
+            "lineageTag": "bf057ec5-5cf8-4cc1-9423-e25607b36e77",
+            "sourceColumn": "Date Work Order Created",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Date Assembly Completed",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isDateTimeCustom\":true}"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DataType"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "mm/dd/yyyy",
+            "lineageTag": "de77e9a2-208d-47eb-9d41-e381f75f154e",
+            "sourceColumn": "Date Assembly Completed",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Total Qty Report Final Assembly",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "double",
+            "formatString": "0.00",
+            "lineageTag": "55e3b991-f9e3-4b22-9b81-8d1119560c9c",
+            "sourceColumn": "Total Qty Report Final Assembly",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Release Qty",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "double",
+            "formatString": "0.00",
+            "lineageTag": "44512967-b571-4aba-8cad-3af5beec450b",
+            "sourceColumn": "Release Qty",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Item Description",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isText\":true}"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "777e0b50-b9f3-4252-9a14-ebc0afbe777f",
+            "sourceColumn": "Item Description",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Inventory Class",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isText\":true}"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "bdcf8db2-ef6b-4836-ad44-4d7e74684ca8",
+            "sourceColumn": "Inventory Class",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Product Group",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isText\":true}"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "d0c31b96-7ffa-4edb-9081-2c5262a1a023",
+            "sourceColumn": "Product Group",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Picking Qty",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "3f22488e-5b31-411b-8b95-483ddc137445",
+            "sourceColumn": "Picking Qty",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Picking %",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "double",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "78fe6df2-7054-476f-9ab2-bdc440d9d023",
+            "sourceColumn": "Picking %",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Fabrication Qty",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "6551b787-7882-431d-b06b-413dc8087d32",
+            "sourceColumn": "Fabrication Qty",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Fabrication %",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "double",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "0b7aa622-6e9a-4312-ba1d-57e53f67dd16",
+            "sourceColumn": "Fabrication %",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Paint Qty",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "5d1795af-aa74-4877-8621-75cae0698a20",
+            "sourceColumn": "Paint Qty",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Paint %",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "double",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "d7e020e6-952d-40f1-b4e6-f834464def4b",
+            "sourceColumn": "Paint %",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Preassembly Qty",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "fd178a0c-0fbd-4ba5-be39-51d6994f94aa",
+            "sourceColumn": "Preassembly Qty",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Preassembly %",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "double",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "d32ac7f7-2a57-4d65-80d5-5cc47a4e854d",
+            "sourceColumn": "Preassembly %",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Assembly Qty",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "6b1d7b16-4e79-472c-896c-cc1d154b0ab8",
+            "sourceColumn": "Assembly Qty",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Assembly %",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "double",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "b2da6ed4-87c5-442f-8327-194a575d6b5e",
+            "sourceColumn": "Assembly %",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Quality Qty",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "08409c1d-3b46-4458-b192-797aa45c668b",
+            "sourceColumn": "Quality Qty",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Quality %",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "double",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "8aa4a968-b5e4-4b93-946b-0f34c4b61ac6",
+            "sourceColumn": "Quality %",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Production Status",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isText\":true}"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "51c62c02-4bd5-4863-be90-2f9f427cde8b",
+            "sourceColumn": "Production Status",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Last Activity Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "5b9f93e1-1eb2-4f5f-b9b5-f39754a73099",
+            "sourceColumn": "Last Activity Date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Last Process Completed",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isText\":true}"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "af397bd6-b01b-4f34-a8c2-4c8484eb16d8",
+            "sourceColumn": "Last Process Completed",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Hrs Since Last Activity",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "4c784fae-16b7-4405-b6b9-632a9e9769a5",
+            "sourceColumn": "Hrs Since Last Activity",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Active Work Order Flag",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isText\":true}"
+              }
+            ],
+            "dataType": "string",
+            "expression": "IF(_V_PRODUCTION_STATUS_RPT[Last Activity Date] <> BLANK(),\"Y\",\"N\")",
+            "isDataTypeInferred": true,
+            "lineageTag": "affa4ce2-de67-4165-8585-613235c02900",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Awaiting Process Flag",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isText\":true}"
+              }
+            ],
+            "dataType": "string",
+            "expression": "IF(LEFT(_V_PRODUCTION_STATUS_RPT[Production Status],8) = \"Awaiting\",\"Y\",\"N\")",
+            "isDataTypeInferred": true,
+            "lineageTag": "7c053e4f-1baa-4f3c-9245-b1b8e9408a31",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Production Status Hierarchy",
+            "levels": [
+              {
+                "name": "Production Status",
+                "column": "Production Status",
+                "lineageTag": "7a5410d1-d93e-4232-b865-e1cbcc3508c6",
+                "ordinal": 0
+              },
+              {
+                "name": "Product Group",
+                "column": "Product Group",
+                "lineageTag": "dc2793a9-90ba-4a8f-9490-34847a27d0f9",
+                "ordinal": 1
+              },
+              {
+                "name": "Work Order #",
+                "column": "Work Order #",
+                "lineageTag": "925fa083-5ccf-45ad-8d18-d93aca9b7716",
+                "ordinal": 2
+              }
+            ],
+            "lineageTag": "16076659-f880-4648-bb86-6dc6bccf3060"
+          }
+        ],
+        "lineageTag": "be322ac8-4939-4ae6-913f-8ef2a04a4c09",
+        "partitions": [
+          {
+            "name": "_V_PRODUCTION_STATUS_RPT-a3f01d88-cd19-49c3-b7b3-66b3b4b1f8f8",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Snowflake.Databases(\"rz02726.us-east-1.snowflakecomputing.com\",\"COMPUTE_WH\"),",
+                "    IQMS_Database = Source{[Name=\"IQMS\",Kind=\"Database\"]}[Data],",
+                "    PUBLIC_Schema = IQMS_Database{[Name=\"PUBLIC\",Kind=\"Schema\"]}[Data],",
+                "    _V_PRODUCTION_STATUS_RPT_View = PUBLIC_Schema{[Name=\"_V_PRODUCTION_STATUS_RPT\",Kind=\"View\"]}[Data],",
+                "    #\"Renamed Columns\" = Table.RenameColumns(_V_PRODUCTION_STATUS_RPT_View,{{\"STATUS\", \"Production Status\"}, {\"WORKORDERID\", \"Work Order #\"}, {\"REL_QUAN\", \"Release Qty\"}, {\"DESCRIP\", \"Item Description\"}, {\"ITEMNO\", \"Item #\"}, {\"PRODUCT_GROUP\", \"Product Group\"}, {\"TOTAL_FINAL_ASSEMBLY\", \"Total Qty Report Final Assembly\"}, {\"QUALITY_PCT\", \"Quality %\"}, {\"QUALITY\", \"Quality Qty\"}, {\"PREASSEMBLY\", \"Preassembly Qty\"}, {\"PREASSEMBLY_PCT\", \"Preassembly %\"}, {\"PICKING\", \"Picking Qty\"}, {\"PICKING_PCT\", \"Picking %\"}, {\"PAINT_PCT\", \"Paint %\"}, {\"PAINT\", \"Paint Qty\"}, {\"LAST_PROCESS\", \"Last Process Completed\"}, {\"HRS_SINCE_LAST_ACTIVITY\", \"Hrs Since Last Activity\"}, {\"FABRICATION_PCT\", \"Fabrication %\"}, {\"FABRICATION\", \"Fabrication Qty\"}, {\"DATE_CREATED\", \"Date Work Order Created\"}, {\"DATE_ASSEMBLY_COMPLETED\", \"Date Assembly Completed\"}, {\"ASSEMBLY_PCT\", \"Assembly %\"}, {\"ASSEMBLY\", \"Assembly Qty\"}, {\"LAST_ACTIVITY\", \"Last Activity Date\"}, {\"CLASS\", \"Inventory Class\"}})",
+                "in",
+                "    #\"Renamed Columns\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "DATE_DIM",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "639fd5e0-0fe7-4d65-bf39-b6401f1d3e06",
+            "sourceColumn": "ID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DATE",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "fcb0565d-76b8-4a62-a1e4-2ecd6af4d116",
+            "sourceColumn": "DATE",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "YEAR",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "275cd26c-eacc-4fcc-a8f0-8de2dab68beb",
+            "sourceColumn": "YEAR",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FYEAR",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "220275e5-286b-4b5c-af2f-9133deb2ff09",
+            "sourceColumn": "FYEAR",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FPERIOD",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "c2ca3d31-e4e8-4eda-86cc-8999f5b476a7",
+            "sourceColumn": "FPERIOD",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "MONTH",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "8d7d729b-5de7-4cd1-9d2c-f766be0f4af9",
+            "sourceColumn": "MONTH",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "MONTHNAME",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isText\":true}"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "249e75c6-4c2f-4c33-acf9-bb4d93310544",
+            "sourceColumn": "MONTHNAME",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DAY",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "2f146c01-51f7-4bce-a93d-4dfdb2ad61fd",
+            "sourceColumn": "DAY",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DAYOFWEEK",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isText\":true}"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b229db06-f028-45f0-a4ce-ab39056c07e2",
+            "sourceColumn": "DAYOFWEEK",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "WEEKOFYEAR",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "1aed6515-4f21-4954-a01d-2764f0777908",
+            "sourceColumn": "WEEKOFYEAR",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DAYOFYEAR",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "8efb79ee-16cd-4a15-9eda-d2c18bc8498e",
+            "sourceColumn": "DAYOFYEAR",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SCOTTDALE_WORK_DAY_FLAG",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "boolean",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "505d8e9f-cb22-4ff3-badb-7e407b461da7",
+            "sourceColumn": "SCOTTDALE_WORK_DAY_FLAG",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CLARKSTON_WORK_DAY_FLAG",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "boolean",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "2556a5e2-1b7e-4f75-a4fa-b45c4cb783ff",
+            "sourceColumn": "CLARKSTON_WORK_DAY_FLAG",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "ba774a49-0ea9-4c21-be08-4e5b0509f01f",
+        "partitions": [
+          {
+            "name": "DATE_DIM-aaf56b04-64c4-41e4-aab3-d5ee966c167b",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Snowflake.Databases(\"rz02726.us-east-1.snowflakecomputing.com\",\"COMPUTE_WH\"),",
+                "    IQMS_Database = Source{[Name=\"IQMS\",Kind=\"Database\"]}[Data],",
+                "    PUBLIC_Schema = IQMS_Database{[Name=\"PUBLIC\",Kind=\"Schema\"]}[Data],",
+                "    DATE_DIM_Table = PUBLIC_Schema{[Name=\"DATE_DIM\",Kind=\"Table\"]}[Data]",
+                "in",
+                "    DATE_DIM_Table"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Measure Table",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Column1",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isText\":true}"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "81068826-ce98-47a2-b75f-bfbf174dedc6",
+            "sourceColumn": "Column1",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "c59bc5b6-1e15-4eac-9ab3-face5c3edca6",
+        "measures": [
+          {
+            "name": "Average Hrs Since Last Activity",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "AVERAGE(_V_PRODUCTION_STATUS_RPT[Hrs Since Last Activity])",
+            "lineageTag": "b6d49fa4-6971-400a-9258-171defa3645d"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Measure Table-e5beaa0b-1cdb-4a77-91a8-e57ad3449e35",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"i45W8k1NLC4tSlWKjQUA\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(Source,{{\"Column1\", type text}})",
+                "in",
+                "    #\"Changed Type\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 343.75
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 175,
+            "y": 391.11979166666669
+          },
+          "nodeIndex": "DIM_DATES",
+          "nodeLineageTag": "c0cc5884-20dc-4173-953d-c00db492ac97",
+          "size": {
+            "height": 486.25,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 877.5,
+            "y": 324.453125
+          },
+          "nodeIndex": "DIM_EMPLOYEES",
+          "nodeLineageTag": "76330430-6278-4f03-b260-c4150a32b1a1",
+          "size": {
+            "height": 347.25,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 586.75,
+            "y": 352.453125
+          },
+          "nodeIndex": "DIM_PROCESSES",
+          "nodeLineageTag": "5eb4fe67-fef3-49dc-a82c-1ecf8f442c99",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 586.5,
+            "y": 800.09895833333326
+          },
+          "nodeIndex": "FCT_ACTUAL_TO_STANDARD_HOURS",
+          "nodeLineageTag": "b02eb8c8-d874-4b2d-9c02-b42228d456cd",
+          "size": {
+            "height": 488.5,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 622.75,
+            "y": 32.182291666666629
+          },
+          "nodeIndex": "DIM_PRODUCT_MODELS",
+          "nodeLineageTag": "0b7d5528-2910-4341-a073-68f310c9c94d",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 1164.25,
+            "y": 62.432291666666629
+          },
+          "nodeIndex": "DIM_WORKORDERS",
+          "nodeLineageTag": "6710113d-7889-4e64-8dcc-1d1f8b45a264",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 5
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 80,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

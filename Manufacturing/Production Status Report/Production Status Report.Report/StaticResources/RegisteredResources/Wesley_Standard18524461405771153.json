@@ -1,0 +1,48 @@
+{
+  "name": "Wesley Standard",
+  "dataColors": [
+    "#FFCC00",
+    "#8556A8",
+    "#D05EA6",
+    "#86D333",
+    "#2EA7B8",
+    "#2FA682",
+    "#4863CE",
+    "#E47323"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#070f25",
+  "tableAccent": "#0F1934",
+  "textClasses": {
+    "label": {
+      "fontFace": "Tahoma"
+    },
+    "callout": {
+      "fontFace": "Verdana"
+    },
+    "title": {
+      "color": "#3E3E3E",
+      "fontFace": "Verdana"
+    },
+    "header": {
+      "fontFace": "Verdana"
+    }
+  },
+  "good": "#2CCD40",
+  "visualStyles": {
+    "page": {
+      "*": {
+        "background": [
+          {
+            "transparency": 100
+          }
+        ],
+        "outspace": [
+          {
+            "transparency": 0
+          }
+        ]
+      }
+    }
+  }
+}

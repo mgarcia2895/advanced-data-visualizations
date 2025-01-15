@@ -1,0 +1,100 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 378.75
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 195,
+            "y": 118.34635416666667
+          },
+          "nodeIndex": "DIM_DATES",
+          "nodeLineageTag": "c0cc5884-20dc-4173-953d-c00db492ac97",
+          "size": {
+            "height": 486.25,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 1040,
+            "y": 96.6796875
+          },
+          "nodeIndex": "DIM_EMPLOYEES",
+          "nodeLineageTag": "76330430-6278-4f03-b260-c4150a32b1a1",
+          "size": {
+            "height": 347.25,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 568,
+            "y": 134.6796875
+          },
+          "nodeIndex": "DIM_PROCESSES",
+          "nodeLineageTag": "5eb4fe67-fef3-49dc-a82c-1ecf8f442c99",
+          "size": {
+            "height": 257.75,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 694.75,
+            "y": 481.8046875
+          },
+          "nodeIndex": "FCT_ACTUAL_TO_CLOCK_LABOR",
+          "nodeLineageTag": "bbf3d0fb-3010-4d87-8234-01150f2ae433",
+          "size": {
+            "height": 723.25,
+            "width": 257.75
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 1528,
+            "y": 670.5546875
+          },
+          "nodeIndex": "DIM_INVENTORY",
+          "nodeLineageTag": "446387cf-7f6a-4264-8594-f930066f910c",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 1175.75,
+            "y": 864.6640625
+          },
+          "nodeIndex": "DIM_WORKORDERS",
+          "nodeLineageTag": "a7d8cafe-cbcb-4812-89d5-e1d7904e3845",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 80,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

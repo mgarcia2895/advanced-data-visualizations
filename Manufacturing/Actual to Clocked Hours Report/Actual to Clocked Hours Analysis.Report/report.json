@@ -1,0 +1,307 @@
+{
+  "config": "{\"version\":\"5.55\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU06\",\"version\":\"5.56\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true,\"useEnhancedTooltips\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "filters": "[{\"name\":\"21722484aa4820e53239\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"DIM_EMPLOYEES\"}},\"Property\":\"FACILITY_LOCATION\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DIM_EMPLOYEES\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"FACILITY_LOCATION\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Office'\"}}]]}}}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}},{\"name\":\"0dcc7f436cb84422c442\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"DIM_EMPLOYEES\"}},\"Property\":\"EMPLOYEE_FULL_NAME\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DIM_EMPLOYEES\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"EMPLOYEE_FULL_NAME\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"' AUSER'\"}}],[{\"Literal\":{\"Value\":\"'A USER'\"}}],[{\"Literal\":{\"Value\":\"'Auser 1'\"}}],[{\"Literal\":{\"Value\":\"'One Path'\"}}],[{\"Literal\":{\"Value\":\"'Corey James'\"}}]]}}}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}]",
+  "layoutOptimization": 0,
+  "publicCustomVisuals": [
+    "Sunburst1445472000808"
+  ],
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU06",
+            "path": "BaseThemes/CY24SU06.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    },
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "logo-retina41242020622748.png",
+            "path": "logo-retina41242020622748.png",
+            "type": 100
+          },
+          {
+            "name": "main_(1)9093394653573288.png",
+            "path": "main_(1)9093394653573288.png",
+            "type": 100
+          },
+          {
+            "name": "pack-mule-icon-web-lg9406785990454192.png",
+            "path": "pack-mule-icon-web-lg9406785990454192.png",
+            "type": 100
+          }
+        ],
+        "name": "RegisteredResources",
+        "type": 1
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{\"objects\":{\"outspacePane\":[{\"properties\":{\"width\":{\"expr\":{\"Literal\":{\"Value\":\"187L\"}}}}}]}}",
+      "displayName": "Process Breakdown",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "614ec771695c2a5b9419",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"44ae35088423441a5a88\",\"layouts\":[{\"id\":0,\"position\":{\"x\":651.873840445269,\"y\":84.30426716141002,\"z\":0,\"width\":628.126159554731,\"height\":441.70686456400745,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"treemap\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(FCT_ACTUAL_TO_CLOCK_LABOR.TASK_HOURS)\"}],\"Group\":[{\"queryRef\":\"DIM_PROCESSES.OPERATION_GROUP\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"FCT_ACTUAL_TO_CLOCK_LABOR\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"DIM_PROCESSES\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"TASK_HOURS\"}},\"Function\":0},\"Name\":\"Sum(FCT_ACTUAL_TO_CLOCK_LABOR.TASK_HOURS)\",\"NativeReferenceName\":\"Task Hours\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"OPERATION_GROUP\"},\"Name\":\"DIM_PROCESSES.OPERATION_GROUP\",\"NativeReferenceName\":\"Process Group\"}]},\"columnProperties\":{\"DIM_PROCESSES.OPERATION_GROUP\":{\"displayName\":\"Process Group\"},\"Sum(FCT_ACTUAL_TO_CLOCK_LABOR.TASK_HOURS)\":{\"displayName\":\"Task Hours\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"legend\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Task Hours By Process Group'\"}}}}}],\"subTitle\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"''\"}}}}}]}}}",
+          "filters": "[{\"name\":\"65b4597dbc26b46361c7\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"DIM_PROCESSES\"}},\"Property\":\"Category\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DIM_PROCESSES\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Category\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'UD'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}}]",
+          "height": 441.71,
+          "width": 628.13,
+          "x": 651.87,
+          "y": 84.30,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"519678d7a5a1291b8709\",\"layouts\":[{\"id\":0,\"position\":{\"x\":315.6022635408246,\"y\":83.81568310428456,\"z\":12000,\"width\":336.2974939369442,\"height\":95.19805982215036,\"tabOrder\":12000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Non-UD Task Hours : Total Task Hours\",\"textStyle\":{\"fontWeight\":\"bold\"}}]},{\"textRuns\":[{\"value\":\"- Green (85 to 100%): Optimal Performance\",\"textStyle\":{\"fontWeight\":\"bold\",\"color\":\"#28a745\"}}]},{\"textRuns\":[{\"value\":\"- Yellow (75 to 85%): Caution\",\"textStyle\":{\"fontWeight\":\"bold\",\"color\":\"#ffc107\"}}]},{\"textRuns\":[{\"value\":\"- Red (< 75%): Poor Performance\",\"textStyle\":{\"fontWeight\":\"bold\",\"color\":\"#dc3545\"}}]},{\"textRuns\":[{\"value\":\"\"}]}]}}]},\"vcObjects\":{\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.1}}}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 95.20,
+          "width": 336.30,
+          "x": 315.60,
+          "y": 83.82,
+          "z": 12000.00
+        },
+        {
+          "config": "{\"name\":\"5cbf9400a2aa6035e033\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":82.40343347639485,\"z\":6000,\"width\":315.87982832618025,\"height\":96.13733905579399,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"FCT_ACTUAL_TO_CLOCK_LABOR.Non_UD_Task_Hours_Ratio\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"FCT_ACTUAL_TO_CLOCK_LABOR\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Non_UD_Task_Hours_Ratio\"},\"Name\":\"FCT_ACTUAL_TO_CLOCK_LABOR.Non_UD_Task_Hours_Ratio\",\"NativeReferenceName\":\"Non_UD_Task_Hours_Ratio\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Non_UD_Task_Hours_Ratio\"}}}]},\"columnProperties\":{\"fct_actual_to_clock_labor_8 14.Current_Ratio\":{\"displayName\":\"Current Relative Date Range\"},\"Power BI Visualizations - Earne.Filtered_Ratio\":{\"displayName\":\"Current Ratio\"},\"FCT_ACTUAL_TO_CLOCK_LABOR.Current_Ratio\":{\"displayName\":\"Relative Period Ratio\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"Conditional\":{\"Cases\":[{\"Condition\":{\"Comparison\":{\"ComparisonKind\":2,\"Left\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"FCT_ACTUAL_TO_CLOCK_LABOR\"}},\"Property\":\"Non_UD_Task_Hours_Ratio\"}},\"Right\":{\"Literal\":{\"Value\":\"0.85D\"}}}},\"Value\":{\"Literal\":{\"Value\":\"'#28A745'\"}}},{\"Condition\":{\"And\":{\"Left\":{\"Comparison\":{\"ComparisonKind\":2,\"Left\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"FCT_ACTUAL_TO_CLOCK_LABOR\"}},\"Property\":\"Non_UD_Task_Hours_Ratio\"}},\"Right\":{\"Literal\":{\"Value\":\"0.75D\"}}}},\"Right\":{\"Comparison\":{\"ComparisonKind\":3,\"Left\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"FCT_ACTUAL_TO_CLOCK_LABOR\"}},\"Property\":\"Non_UD_Task_Hours_Ratio\"}},\"Right\":{\"Literal\":{\"Value\":\"0.85D\"}}}}}},\"Value\":{\"Literal\":{\"Value\":\"'#D9B300'\"}}},{\"Condition\":{\"Comparison\":{\"ComparisonKind\":3,\"Left\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"FCT_ACTUAL_TO_CLOCK_LABOR\"}},\"Property\":\"Non_UD_Task_Hours_Ratio\"}},\"Right\":{\"Literal\":{\"Value\":\"0.75D\"}}}},\"Value\":{\"Literal\":{\"Value\":\"'#DC3545'\"}}}]}}}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Non-UD Tasks : Total Task Hours Ratio'\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}},\"heading\":{\"expr\":{\"Literal\":{\"Value\":\"'Normal'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0}}}}},\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"spacing\":[{\"properties\":{\"verticalSpacing\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"subTitle\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'(Relative Period or Select Date)'\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0}}}}}}}],\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.5}}}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"100D\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"width\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 96.14,
+          "width": 315.88,
+          "x": 0.00,
+          "y": 82.40,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"679e97581abb923e15d2\",\"layouts\":[{\"id\":0,\"position\":{\"x\":192.04801200300074,\"y\":0,\"z\":1000,\"width\":230.45761440360087,\"height\":62.41560390097524,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"FCT_ACTUAL_TO_CLOCK_LABOR.Anomalies_Column\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"FCT_ACTUAL_TO_CLOCK_LABOR\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Anomalies_Column\"},\"Name\":\"FCT_ACTUAL_TO_CLOCK_LABOR.Anomalies_Column\",\"NativeReferenceName\":\"Anomalies_Column\"}]},\"display\":{\"mode\":\"hidden\"},\"syncGroup\":{\"groupName\":\"Anomalies_Column\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"orientation\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}},\"outlineColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#ffffff'\"}}}}},\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"FCT_ACTUAL_TO_CLOCK_LABOR\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Anomalies_Column\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Exclude Anomalies'\"}}]]}}}]}}}}],\"selection\":[{\"properties\":{\"singleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"strictSingleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"selectAllCheckboxEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"header\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"items\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}},\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"background\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":0}}}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Anomalies Toggle'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 62.42,
+          "width": 230.46,
+          "x": 192.05,
+          "y": 0.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"916a2ab70765c46c276c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":185.23191094619668,\"y\":10.686456400742115,\"z\":9000,\"width\":55.80705009276438,\"height\":56.99443413729128,\"tabOrder\":8000}}],\"singleVisual\":{\"visualType\":\"image\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"imageUrl\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"pack-mule-icon-web-lg9406785990454192.png\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 56.99,
+          "width": 55.81,
+          "x": 185.23,
+          "y": 10.69,
+          "z": 9000.00
+        },
+        {
+          "config": "{\"name\":\"943c40cf177454a12866\",\"layouts\":[{\"id\":0,\"position\":{\"x\":256.47495361781074,\"y\":18.998144712430427,\"z\":10000,\"width\":118.73840445269018,\"height\":39.183673469387756,\"tabOrder\":9000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Draft 6\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontFamily\":\"Arial\",\"fontSize\":\"16pt\",\"color\":\"#d64550\"}}],\"horizontalTextAlignment\":\"center\"}]}}]}}}",
+          "filters": "[]",
+          "height": 39.18,
+          "width": 118.74,
+          "x": 256.47,
+          "y": 19.00,
+          "z": 10000.00
+        },
+        {
+          "config": "{\"name\":\"9abdb227037b19e05b05\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":178.54077253218884,\"z\":7000,\"width\":652.3605150214593,\"height\":541.1158798283261,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"hundredPercentStackedColumnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"DIM_DATES.Relative Date.Fiscal Year\",\"active\":true},{\"queryRef\":\"DIM_DATES.Relative Date.Month\",\"active\":true},{\"queryRef\":\"DIM_DATES.Relative Date.Day of Month\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(FCT_ACTUAL_TO_CLOCK_LABOR.TASK_HOURS)\"}],\"Series\":[{\"queryRef\":\"DIM_PROCESSES.Category\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DIM_DATES\",\"Type\":0},{\"Name\":\"f\",\"Entity\":\"FCT_ACTUAL_TO_CLOCK_LABOR\",\"Type\":0},{\"Name\":\"d1\",\"Entity\":\"DIM_PROCESSES\",\"Type\":0}],\"Select\":[{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Hierarchy\":\"Relative Date\"}},\"Level\":\"Fiscal Year\"},\"Name\":\"DIM_DATES.Relative Date.Fiscal Year\",\"NativeReferenceName\":\"Relative Date Fiscal Year\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Hierarchy\":\"Relative Date\"}},\"Level\":\"Month\"},\"Name\":\"DIM_DATES.Relative Date.Month\",\"NativeReferenceName\":\"Relative Date Month\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Hierarchy\":\"Relative Date\"}},\"Level\":\"Day of Month\"},\"Name\":\"DIM_DATES.Relative Date.Day of Month\",\"NativeReferenceName\":\"Relative Date Day of Month\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"TASK_HOURS\"}},\"Function\":0},\"Name\":\"Sum(FCT_ACTUAL_TO_CLOCK_LABOR.TASK_HOURS)\",\"NativeReferenceName\":\"Task Hours\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d1\"}},\"Property\":\"Category\"},\"Name\":\"DIM_PROCESSES.Category\",\"NativeReferenceName\":\"Category\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Hierarchy\":\"Relative Date\"}},\"Level\":\"Fiscal Year\"}}},{\"Direction\":2,\"Expression\":{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Hierarchy\":\"Relative Date\"}},\"Level\":\"Month\"}}},{\"Direction\":2,\"Expression\":{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Hierarchy\":\"Relative Date\"}},\"Level\":\"Day of Month\"}}}]},\"columnProperties\":{\"Sum(FCT_ACTUAL_TO_CLOCK_LABOR.TASK_HOURS)\":{\"displayName\":\"Task Hours\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":8,\"Percent\":0}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"DIM_PROCESSES\"}},\"Property\":\"Category\"}},\"Right\":{\"Literal\":{\"Value\":\"'Non-UD'\"}}}}}]}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.3}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"DIM_PROCESSES\"}},\"Property\":\"Category\"}},\"Right\":{\"Literal\":{\"Value\":\"'UD'\"}}}}}]}}],\"valueAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"categoryAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Task Hours Proportion by Process Category, Relative Period'\"}}}}}]}}}",
+          "filters": "[{\"name\":\"2d061b7b3e798c680175\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"DIM_PROCESSES\"}},\"Property\":\"Category\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DIM_PROCESSES\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Category\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Non-UD'\"}}],[{\"Literal\":{\"Value\":\"'UD'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{}}]",
+          "height": 541.12,
+          "width": 652.36,
+          "x": 0.00,
+          "y": 178.54,
+          "z": 7000.00
+        },
+        {
+          "config": "{\"name\":\"a2d92ed15609130eb628\",\"layouts\":[{\"id\":0,\"position\":{\"x\":995.8620689655173,\"y\":0,\"z\":3000,\"width\":284.1379310344828,\"height\":79.08045977011496,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"DIM_EMPLOYEES.EMPLOYEE_FULL_NAME\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DIM_EMPLOYEES\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"EMPLOYEE_FULL_NAME\"},\"Name\":\"DIM_EMPLOYEES.EMPLOYEE_FULL_NAME\",\"NativeReferenceName\":\"Employee\"}]},\"columnProperties\":{\"DIM_EMPLOYEES.EMPLOYEE_FULL_NAME\":{\"displayName\":\"Employee\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"selection\":[{\"properties\":{\"selectAllCheckboxEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"general\":[{\"properties\":{}}]}}}",
+          "filters": "[]",
+          "height": 79.08,
+          "width": 284.14,
+          "x": 995.86,
+          "y": 0.00,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"d812319801068c9903e1\",\"layouts\":[{\"id\":0,\"position\":{\"x\":980.032102728732,\"y\":0,\"z\":5000,\"width\":299.96789727126804,\"height\":82.18298555377207,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"DIM_EMPLOYEES.Status_Column\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DIM_EMPLOYEES\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Status_Column\"},\"Name\":\"DIM_EMPLOYEES.Status_Column\",\"NativeReferenceName\":\"Status_Column\"}]},\"display\":{\"mode\":\"hidden\"},\"syncGroup\":{\"groupName\":\"Status_Column\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DIM_EMPLOYEES\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Status_Column\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Active'\"}}]]}}}]}}}}],\"header\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Employee Status'\"}}}}}],\"selection\":[{\"properties\":{\"selectAllCheckboxEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"items\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}]}}}",
+          "filters": "[{\"name\":\"Filter3d538c46414769bae90b\",\"expression\":{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Table1\"}},\"Hierarchy\":\"IS_INACTIVE Hierarchy\"}},\"Level\":\"IS_INACTIVE\"}},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"isHiddenInViewMode\":false}]",
+          "height": 82.18,
+          "width": 299.97,
+          "x": 980.03,
+          "y": 0.00,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"db3ba49047162503040b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":711.7241379310345,\"y\":0.9195402298850576,\"z\":2000,\"width\":284.1379310344828,\"height\":83.67816091954023,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"DIM_DATES.CALENDAR_DATE\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DIM_DATES\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"CALENDAR_DATE\"},\"Name\":\"DIM_DATES.CALENDAR_DATE\",\"NativeReferenceName\":\"Relative Period\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"CALENDAR_DATE\"}}}]},\"columnProperties\":{\"DIM_DATES.CALENDAR_DATE\":{\"displayName\":\"Relative Period\"}},\"syncGroup\":{\"groupName\":\"CALENDAR_DATE\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"selection\":[{\"properties\":{\"selectAllCheckboxEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Relative'\"}}},\"relativeRange\":{\"expr\":{\"Literal\":{\"Value\":\"'Last'\"}}},\"relativeDuration\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}},\"relativePeriod\":{\"expr\":{\"Literal\":{\"Value\":\"'Months'\"}}}}}],\"dateRange\":[{\"properties\":{\"includeToday\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DIM_DATES\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Between\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"CALENDAR_DATE\"}},\"LowerBound\":{\"DateSpan\":{\"Expression\":{\"DateAdd\":{\"Expression\":{\"DateAdd\":{\"Expression\":{\"Now\":{}},\"Amount\":1,\"TimeUnit\":0}},\"Amount\":-1,\"TimeUnit\":2}},\"TimeUnit\":0}},\"UpperBound\":{\"DateSpan\":{\"Expression\":{\"Now\":{}},\"TimeUnit\":0}}}}}]}}}}]}}}",
+          "filters": "[]",
+          "height": 83.68,
+          "width": 284.14,
+          "x": 711.72,
+          "y": 0.92,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"e3b62b14db8934ae6030\",\"layouts\":[{\"id\":0,\"position\":{\"x\":49.87012987012987,\"y\":7.12430426716141,\"z\":8000,\"width\":135.3617810760668,\"height\":62.93135435992579,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"image\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"imageUrl\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"logo-retina41242020622748.png\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 62.93,
+          "width": 135.36,
+          "x": 49.87,
+          "y": 7.12,
+          "z": 8000.00
+        },
+        {
+          "config": "{\"name\":\"e6f3e2ac43d2092658c1\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"width\":100,\"height\":40,\"z\":4000,\"tabOrder\":11000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'back'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Back'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 40.00,
+          "width": 100.00,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"f6d0d00182b402aa16a4\",\"layouts\":[{\"id\":0,\"position\":{\"x\":794.2804766269478,\"y\":525.6095325389551,\"z\":11000,\"width\":344.9312557286893,\"height\":194.7571035747021,\"tabOrder\":10000}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(FCT_ACTUAL_TO_CLOCK_LABOR.TASK_HOURS)\"}],\"Columns\":[{\"queryRef\":\"DIM_PROCESSES.Category\",\"active\":true}],\"Rows\":[{\"queryRef\":\"DIM_EMPLOYEES.EMPLOYEE_FULL_NAME\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"FCT_ACTUAL_TO_CLOCK_LABOR\",\"Type\":0},{\"Name\":\"d1\",\"Entity\":\"DIM_PROCESSES\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"DIM_EMPLOYEES\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"TASK_HOURS\"}},\"Function\":0},\"Name\":\"Sum(FCT_ACTUAL_TO_CLOCK_LABOR.TASK_HOURS)\",\"NativeReferenceName\":\"Sum of TASK_HOURS\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d1\"}},\"Property\":\"Category\"},\"Name\":\"DIM_PROCESSES.Category\",\"NativeReferenceName\":\"Category\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"EMPLOYEE_FULL_NAME\"},\"Name\":\"DIM_EMPLOYEES.EMPLOYEE_FULL_NAME\",\"NativeReferenceName\":\"Employee\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"TASK_HOURS\"}},\"Function\":0}}}]},\"columnProperties\":{\"DIM_EMPLOYEES.EMPLOYEE_FULL_NAME\":{\"displayName\":\"Employee\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"columnHeaders\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Center'\"}}},\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"titleAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Center'\"}}}}}]}}}",
+          "filters": "[{\"name\":\"c2cfe6310402c80bd285\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"DIM_PROCESSES\"}},\"Property\":\"Category\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DIM_PROCESSES\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Category\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"null\"}}]]}}}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}]",
+          "height": 194.76,
+          "width": 344.93,
+          "x": 794.28,
+          "y": 525.61,
+          "z": 11000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{\"relationships\":[{\"source\":\"b659719ab257ff168ed7\",\"target\":\"17bc69f964317ea3e221\",\"type\":1},{\"source\":\"17bc69f964317ea3e221\",\"target\":\"b659719ab257ff168ed7\",\"type\":1},{\"source\":\"d75f51a432a99d9e2b84\",\"target\":\"17bc69f964317ea3e221\",\"type\":1},{\"source\":\"2ac430dc5230245af0dc\",\"target\":\"17bc69f964317ea3e221\",\"type\":1},{\"source\":\"2ac430dc5230245af0dc\",\"target\":\"86e52597d97f89433e37\",\"type\":1},{\"source\":\"2ac430dc5230245af0dc\",\"target\":\"b659719ab257ff168ed7\",\"type\":1},{\"source\":\"17bc69f964317ea3e221\",\"target\":\"4fb34316b5d2e59db070\",\"type\":1}],\"objects\":{\"background\":[{\"properties\":{\"image\":{\"image\":{\"name\":{\"expr\":{\"Literal\":{\"Value\":\"'main (1).png'\"}}},\"url\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"main_(1)9093394653573288.png\"}}},\"scaling\":{\"expr\":{\"Literal\":{\"Value\":\"'Normal'\"}}}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"outspacePane\":[{\"properties\":{\"width\":{\"expr\":{\"Literal\":{\"Value\":\"264L\"}}}}}]}}",
+      "displayName": "Dashboard",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "b5b51d1b66e546f0a949",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"17bc69f964317ea3e221\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":178.74799357945426,\"z\":1000,\"width\":722.1829855537721,\"height\":349.2776886035313,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Sum(FCT_ACTUAL_TO_CLOCK_LABOR (2).VARIANCE)\"}],\"Category\":[{\"queryRef\":\"DIM_DATES.Relative Date.Fiscal Year\",\"active\":true},{\"queryRef\":\"DIM_DATES.Relative Date.Month\",\"active\":true},{\"queryRef\":\"DIM_DATES.Relative Date.Day of Month\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f1\",\"Entity\":\"FCT_ACTUAL_TO_CLOCK_LABOR\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"DIM_DATES\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f1\"}},\"Property\":\"VARIANCE\"}},\"Function\":0},\"Name\":\"Sum(FCT_ACTUAL_TO_CLOCK_LABOR (2).VARIANCE)\",\"NativeReferenceName\":\"Variance (Total Hours)\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Hierarchy\":\"Relative Date\"}},\"Level\":\"Fiscal Year\"},\"Name\":\"DIM_DATES.Relative Date.Fiscal Year\",\"NativeReferenceName\":\"Relative Date Fiscal Year\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Hierarchy\":\"Relative Date\"}},\"Level\":\"Month\"},\"Name\":\"DIM_DATES.Relative Date.Month\",\"NativeReferenceName\":\"Relative Date Month\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Hierarchy\":\"Relative Date\"}},\"Level\":\"Day of Month\"},\"Name\":\"DIM_DATES.Relative Date.Day of Month\",\"NativeReferenceName\":\"Relative Date Day of Month\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Hierarchy\":\"Relative Date\"}},\"Level\":\"Fiscal Year\"}}},{\"Direction\":2,\"Expression\":{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Hierarchy\":\"Relative Date\"}},\"Level\":\"Month\"}}},{\"Direction\":2,\"Expression\":{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Hierarchy\":\"Relative Date\"}},\"Level\":\"Day of Month\"}}}]},\"columnProperties\":{\"Power BI Visualizations - Earne.Filtered_Variance\":{\"displayName\":\"Variance (Total Hours)\"},\"Sum(FCT_ACTUAL_TO_CLOCK_LABOR (2).VARIANCE)\":{\"displayName\":\"Variance (Total Hours)\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"valueAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"titleBold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"categoryAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"FCT_ACTUAL_TO_CLOCK_LABOR\"}},\"Property\":\"Ratio_Conditional_Formatting\"}}}}}},\"selector\":{\"data\":[{\"dataViewWildcard\":{\"matchingOption\":1}}]}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Variance (Hours) by Relative Period'\"}}},\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 349.28,
+          "width": 722.18,
+          "x": 0.00,
+          "y": 178.75,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"2ac430dc5230245af0dc\",\"layouts\":[{\"id\":0,\"position\":{\"x\":790.2169625246548,\"y\":528.9151873767258,\"z\":0,\"width\":489.78303747534517,\"height\":191.87376725838263,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"DIM_EMPLOYEES.EMPLOYEE_FULL_NAME\"},{\"queryRef\":\"Sum(FCT_ACTUAL_TO_CLOCK_LABOR (2).TASK_HOURS)\"},{\"queryRef\":\"Sum(FCT_ACTUAL_TO_CLOCK_LABOR (2).CLOCK_IN_HRS_PER_TASK)\"},{\"queryRef\":\"Sum(FCT_ACTUAL_TO_CLOCK_LABOR (2).VARIANCE)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DIM_EMPLOYEES\",\"Type\":0},{\"Name\":\"f\",\"Entity\":\"FCT_ACTUAL_TO_CLOCK_LABOR\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"EMPLOYEE_FULL_NAME\"},\"Name\":\"DIM_EMPLOYEES.EMPLOYEE_FULL_NAME\",\"NativeReferenceName\":\"Employee\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"TASK_HOURS\"}},\"Function\":0},\"Name\":\"Sum(FCT_ACTUAL_TO_CLOCK_LABOR (2).TASK_HOURS)\",\"NativeReferenceName\":\"Task Hours (Total)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"CLOCK_IN_HRS_PER_TASK\"}},\"Function\":0},\"Name\":\"Sum(FCT_ACTUAL_TO_CLOCK_LABOR (2).CLOCK_IN_HRS_PER_TASK)\",\"NativeReferenceName\":\"Clock Hours (Total)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"VARIANCE\"}},\"Function\":0},\"Name\":\"Sum(FCT_ACTUAL_TO_CLOCK_LABOR (2).VARIANCE)\",\"NativeReferenceName\":\"Variance\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"CLOCK_IN_HRS_PER_TASK\"}},\"Function\":0}}}]},\"columnProperties\":{\"DIM_EMPLOYEES.EMPLOYEE_FULL_NAME\":{\"displayName\":\"Employee\"},\"Power BI Visualizations - Earne.Filtered_Task_Hours\":{\"displayName\":\"Task Hours (Total)\"},\"Power BI Visualizations - Earne.Filtered_Clock_in_hrs_per_task\":{\"displayName\":\"Clock In Hours (Total)\"},\"Sum(Power BI Visualizations - Earne.TASK_HOURS)\":{\"displayName\":\"Task Hours (Total)\"},\"Sum(Power BI Visualizations - Earne.CLOCK_IN_HRS_PER_TASK)\":{\"displayName\":\"Clock Hours (Total)\"},\"Power BI Visualizations - Earne.Filtered_Variance\":{\"displayName\":\"Variance (Total)\"},\"FCT_ACTUAL_TO_CLOCK_LABOR.Filtered_Variance\":{\"displayName\":\"Variance\"},\"Sum(FCT_ACTUAL_TO_CLOCK_LABOR (2).TASK_HOURS)\":{\"displayName\":\"Task Hours (Total)\"},\"Sum(FCT_ACTUAL_TO_CLOCK_LABOR (2).CLOCK_IN_HRS_PER_TASK)\":{\"displayName\":\"Clock Hours (Total)\"},\"Sum(FCT_ACTUAL_TO_CLOCK_LABOR (2).VARIANCE)\":{\"displayName\":\"Variance\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"columnFormatting\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Auto'\"}}}},\"selector\":{\"metadata\":\"DIM_EMPLOYEES.EMPLOYEE_FULL_NAME\"}}],\"grid\":[{\"properties\":{\"outlineStyle\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"values\":[{\"properties\":{\"outlineStyle\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}},{\"properties\":{},\"selector\":{\"data\":[{\"dataViewWildcard\":{\"matchingOption\":1}}],\"metadata\":\"Sum(FCT_ACTUAL_TO_CLOCK_LABOR (2).VARIANCE)\"}}],\"total\":[{\"properties\":{\"outlineStyle\":{\"expr\":{\"Literal\":{\"Value\":\"15D\"}}},\"label\":{\"expr\":{\"Literal\":{\"Value\":\"'Grand Total'\"}}}}}],\"columnHeaders\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Center'\"}}},\"wordWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"autoSizeColumnWidth\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"columnWidth\":[{\"properties\":{},\"selector\":{\"metadata\":\"DIM_EMPLOYEES.EMPLOYEE_FULL_NAME\"}}]},\"vcObjects\":{\"visualTooltip\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Canvas'\"}}},\"section\":{\"expr\":{\"Literal\":{\"Value\":\"'6a8cb9157fb806c0829c'\"}}}}}],\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.2}}}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"width\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 191.87,
+          "width": 489.78,
+          "x": 790.22,
+          "y": 528.92,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"3a5fe963b709058db00d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":527.5399361022364,\"z\":12000,\"width\":629.776357827476,\"height\":191.18210862619807,\"tabOrder\":12000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"DIM_DATES.CALENDAR_DATE\"},{\"queryRef\":\"FCT_ACTUAL_TO_CLOCK_LABOR.WORKORDER_ID\"},{\"queryRef\":\"DIM_PROCESSES.OPERATION_GROUP\"},{\"queryRef\":\"DIM_INVENTORY.PRODUCT_MODEL\"},{\"queryRef\":\"Sum(FCT_ACTUAL_TO_CLOCK_LABOR.TASK_HOURS)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"FCT_ACTUAL_TO_CLOCK_LABOR\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"DIM_PROCESSES\",\"Type\":0},{\"Name\":\"d2\",\"Entity\":\"DIM_DATES\",\"Type\":0},{\"Name\":\"d1\",\"Entity\":\"DIM_INVENTORY\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"WORKORDER_ID\"},\"Name\":\"FCT_ACTUAL_TO_CLOCK_LABOR.WORKORDER_ID\",\"NativeReferenceName\":\"Work Order\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"TASK_HOURS\"}},\"Function\":0},\"Name\":\"Sum(FCT_ACTUAL_TO_CLOCK_LABOR.TASK_HOURS)\",\"NativeReferenceName\":\"Task Hours\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"OPERATION_GROUP\"},\"Name\":\"DIM_PROCESSES.OPERATION_GROUP\",\"NativeReferenceName\":\"Process Group\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d2\"}},\"Property\":\"CALENDAR_DATE\"},\"Name\":\"DIM_DATES.CALENDAR_DATE\",\"NativeReferenceName\":\"Date\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d1\"}},\"Property\":\"PRODUCT_MODEL\"},\"Name\":\"DIM_INVENTORY.PRODUCT_MODEL\",\"NativeReferenceName\":\"Product Model\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"TASK_HOURS\"}},\"Function\":0}}}]},\"columnProperties\":{\"DIM_DATES.CALENDAR_DATE\":{\"displayName\":\"Date\"},\"FCT_ACTUAL_TO_CLOCK_LABOR.WORKORDER_ID\":{\"displayName\":\"Work Order\"},\"DIM_PROCESSES.OPERATION_GROUP\":{\"displayName\":\"Process Group\"},\"Sum(FCT_ACTUAL_TO_CLOCK_LABOR.TASK_HOURS)\":{\"displayName\":\"Task Hours\"},\"DIM_INVENTORY.PRODUCT_MODEL\":{\"displayName\":\"Product Model\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"columnHeaders\":[{\"properties\":{\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Center'\"}}}}}],\"total\":[{\"properties\":{\"backColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.3}}}}}}}]}}}",
+          "filters": "[]",
+          "height": 191.18,
+          "width": 629.78,
+          "x": 0.00,
+          "y": 527.54,
+          "z": 12000.00
+        },
+        {
+          "config": "{\"name\":\"3e78f1a220a493b14c0b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":243.629191321499,\"y\":83.31360946745562,\"z\":9000,\"width\":362.2879684418146,\"height\":95.93688362919131,\"tabOrder\":9000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Task Hours-to-Clock Hours Ratio Color Coding Legend:\",\"textStyle\":{\"fontWeight\":\"bold\"}}]},{\"textRuns\":[{\"value\":\"- Green (95 to 105%): Optimal Performance\",\"textStyle\":{\"fontWeight\":\"bold\",\"color\":\"#28a745\"}}]},{\"textRuns\":[{\"value\":\"- Yellow (85 to 95% or 105 to 115%): Caution\",\"textStyle\":{\"fontWeight\":\"bold\",\"color\":\"#ffc107\"}}]},{\"textRuns\":[{\"value\":\"- Red (< 85% or > 115%): Poor Performance\",\"textStyle\":{\"fontWeight\":\"bold\",\"color\":\"#dc3545\"}}]},{\"textRuns\":[{\"value\":\"\"}]}]}}]},\"vcObjects\":{\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.1}}}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 95.94,
+          "width": 362.29,
+          "x": 243.63,
+          "y": 83.31,
+          "z": 9000.00
+        },
+        {
+          "config": "{\"name\":\"42ab3a32dbc2ae525b8b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":749.9197431781702,\"y\":0,\"z\":6000,\"width\":230.11235955056182,\"height\":82.18298555377207,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"FCT_ACTUAL_TO_CLOCK_LABOR.Anomalies_Column\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"FCT_ACTUAL_TO_CLOCK_LABOR\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Anomalies_Column\"},\"Name\":\"FCT_ACTUAL_TO_CLOCK_LABOR.Anomalies_Column\",\"NativeReferenceName\":\"Anomalies_Column\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"orientation\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}},\"outlineColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#ffffff'\"}}}}},\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"FCT_ACTUAL_TO_CLOCK_LABOR\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Anomalies_Column\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Exclude Anomalies'\"}}]]}}}]}}}}],\"selection\":[{\"properties\":{\"singleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"strictSingleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"selectAllCheckboxEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"header\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"items\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}},\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"background\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":0}}}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Anomalies Toggle'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 82.18,
+          "width": 230.11,
+          "x": 749.92,
+          "y": 0.00,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"4fb34316b5d2e59db070\",\"layouts\":[{\"id\":0,\"position\":{\"x\":243.46709470304978,\"y\":10.272873194221509,\"z\":5000,\"width\":118.13804173354735,\"height\":40.064205457463885,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Draft 6\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontFamily\":\"Arial\",\"fontSize\":\"16pt\",\"color\":\"#d64550\"}}],\"horizontalTextAlignment\":\"center\"}]}}]}}}",
+          "filters": "[]",
+          "height": 40.06,
+          "width": 118.14,
+          "x": 243.47,
+          "y": 10.27,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"65fba899bcec4c02d5fa\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":7000,\"width\":135.39384846211553,\"height\":62.41560390097524,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"image\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"imageUrl\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"logo-retina41242020622748.png\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 62.42,
+          "width": 135.39,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 7000.00
+        },
+        {
+          "config": "{\"name\":\"6fdb03b20015a088b583\",\"layouts\":[{\"id\":0,\"position\":{\"x\":465.36115569823437,\"y\":0,\"z\":11000,\"width\":284.5585874799358,\"height\":82.18298555377207,\"tabOrder\":11000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"DIM_DATES.CALENDAR_DATE\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DIM_DATES\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"CALENDAR_DATE\"},\"Name\":\"DIM_DATES.CALENDAR_DATE\",\"NativeReferenceName\":\"Relative Period\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"CALENDAR_DATE\"}}}]},\"columnProperties\":{\"DIM_DATES.CALENDAR_DATE\":{\"displayName\":\"Relative Period\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"selection\":[{\"properties\":{\"selectAllCheckboxEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Relative'\"}}},\"relativeRange\":{\"expr\":{\"Literal\":{\"Value\":\"'Last'\"}}},\"relativeDuration\":{\"expr\":{\"Literal\":{\"Value\":\"14D\"}}},\"relativePeriod\":{\"expr\":{\"Literal\":{\"Value\":\"'Days'\"}}}}}],\"dateRange\":[{\"properties\":{\"includeToday\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DIM_DATES\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Between\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"CALENDAR_DATE\"}},\"LowerBound\":{\"DateSpan\":{\"Expression\":{\"DateAdd\":{\"Expression\":{\"DateAdd\":{\"Expression\":{\"Now\":{}},\"Amount\":1,\"TimeUnit\":0}},\"Amount\":-14,\"TimeUnit\":0}},\"TimeUnit\":0}},\"UpperBound\":{\"DateSpan\":{\"Expression\":{\"Now\":{}},\"TimeUnit\":0}}}}}]}}}}]}}}",
+          "filters": "[]",
+          "height": 82.18,
+          "width": 284.56,
+          "x": 465.36,
+          "y": 0.00,
+          "z": 11000.00
+        },
+        {
+          "config": "{\"name\":\"853dfe2020cebc1090bc\",\"layouts\":[{\"id\":0,\"position\":{\"x\":605.9171597633135,\"y\":83.31360946745562,\"z\":10000,\"width\":362.2879684418146,\"height\":95.93688362919131,\"tabOrder\":10000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Anomaly Detection Logic:\",\"textStyle\":{\"fontWeight\":\"bold\"}}]},{\"textRuns\":[{\"value\":\"Task Hours > 16: \",\"textStyle\":{\"fontWeight\":\"bold\"}},{\"value\":\"Fail to Task Out\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"Clock Hours > 16:\",\"textStyle\":{\"fontWeight\":\"bold\"}},{\"value\":\" Fail to Clock Out\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"Zero Task Hours, Non-Zero Clock Hours:\",\"textStyle\":{\"fontWeight\":\"bold\"}},{\"value\":\" Inefficient Usage\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"*Any Above Conditions Trigger:\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"8pt\"}},{\"value\":\" Flagged as Anomaly\",\"textStyle\":{\"fontSize\":\"8pt\"}}]},{\"textRuns\":[{\"value\":\"\"}]}]}}]},\"vcObjects\":{\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.1}}}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 95.94,
+          "width": 362.29,
+          "x": 605.92,
+          "y": 83.31,
+          "z": 10000.00
+        },
+        {
+          "config": "{\"name\":\"86e52597d97f89433e37\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":83.31360946745562,\"z\":3000,\"width\":243.629191321499,\"height\":95.93688362919131,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(FCT_ACTUAL_TO_CLOCK_LABOR.RATIO)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"FCT_ACTUAL_TO_CLOCK_LABOR\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"RATIO\"}},\"Function\":1},\"Name\":\"Sum(FCT_ACTUAL_TO_CLOCK_LABOR.RATIO)\",\"NativeReferenceName\":\"Average of RATIO\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"RATIO\"}},\"Function\":1}}}]},\"columnProperties\":{\"fct_actual_to_clock_labor_8 14.Current_Ratio\":{\"displayName\":\"Current Relative Date Range\"},\"Power BI Visualizations - Earne.Filtered_Ratio\":{\"displayName\":\"Current Ratio\"},\"FCT_ACTUAL_TO_CLOCK_LABOR.Current_Ratio\":{\"displayName\":\"Relative Period Ratio\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"FCT_ACTUAL_TO_CLOCK_LABOR\"}},\"Property\":\"Ratio_Conditional_Formatting\"}}}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Task : Clock Hours Ratio'\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}},\"heading\":{\"expr\":{\"Literal\":{\"Value\":\"'Normal'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0}}}}},\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"spacing\":[{\"properties\":{\"verticalSpacing\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"subTitle\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'(Relative Period or Select Date)'\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0}}}}}}}],\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":0}}}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"100D\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"width\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 95.94,
+          "width": 243.63,
+          "x": 0.00,
+          "y": 83.31,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"a7abd2d4efc5ec646529\",\"layouts\":[{\"id\":0,\"position\":{\"x\":135.22388059701493,\"y\":0,\"z\":8000,\"width\":56.417910447761194,\"height\":56.417910447761194,\"tabOrder\":8000}}],\"singleVisual\":{\"visualType\":\"image\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"imageUrl\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"pack-mule-icon-web-lg9406785990454192.png\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 56.42,
+          "width": 56.42,
+          "x": 135.22,
+          "y": 0.00,
+          "z": 8000.00
+        },
+        {
+          "config": "{\"name\":\"b659719ab257ff168ed7\",\"layouts\":[{\"id\":0,\"position\":{\"x\":722.1829855537721,\"y\":178.74799357945426,\"z\":2000,\"width\":557.817014446228,\"height\":348.25040128410916,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Category\":[{\"queryRef\":\"DIM_EMPLOYEES.EMPLOYEE_FULL_NAME\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(FCT_ACTUAL_TO_CLOCK_LABOR.RATIO)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DIM_EMPLOYEES\",\"Type\":0},{\"Name\":\"f\",\"Entity\":\"FCT_ACTUAL_TO_CLOCK_LABOR\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"EMPLOYEE_FULL_NAME\"},\"Name\":\"DIM_EMPLOYEES.EMPLOYEE_FULL_NAME\",\"NativeReferenceName\":\"Employee\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"RATIO\"}},\"Function\":1},\"Name\":\"Sum(FCT_ACTUAL_TO_CLOCK_LABOR.RATIO)\",\"NativeReferenceName\":\"Ratio (Average)\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"RATIO\"}},\"Function\":1}}}]},\"columnProperties\":{\"Power BI Visualizations - Earne.Filtered_Ratio\":{\"displayName\":\"Ratio\"},\"Sum(Power BI Visualizations - Earne.actual_ratio)\":{\"displayName\":\"Ratio (Average)\"},\"DIM_EMPLOYEES.EMPLOYEE_FULL_NAME\":{\"displayName\":\"Employee\"},\"Sum(FCT_ACTUAL_TO_CLOCK_LABOR.RATIO)\":{\"displayName\":\"Ratio (Average)\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"labelPrecision\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}}}}],\"dataPoint\":[{\"properties\":{}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"FCT_ACTUAL_TO_CLOCK_LABOR\"}},\"Property\":\"Ratio_Conditional_Formatting\"}}}}}},\"selector\":{\"data\":[{\"dataViewWildcard\":{\"matchingOption\":1}}]}}],\"valueAxis\":[{\"properties\":{\"titleBold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"categoryAxis\":[{\"properties\":{\"titleBold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"visualHeader\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Task : Clock Hours Ratio by Employee'\"}}},\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":0}}}}}}}]}}}",
+          "filters": "[]",
+          "height": 348.25,
+          "width": 557.82,
+          "x": 722.18,
+          "y": 178.75,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"d75f51a432a99d9e2b84\",\"layouts\":[{\"id\":0,\"position\":{\"x\":980.032102728732,\"y\":0,\"z\":4000,\"width\":299.96789727126804,\"height\":82.18298555377207,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"DIM_EMPLOYEES.Status_Column\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DIM_EMPLOYEES\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Status_Column\"},\"Name\":\"DIM_EMPLOYEES.Status_Column\",\"NativeReferenceName\":\"Status_Column\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DIM_EMPLOYEES\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Status_Column\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Active'\"}}]]}}}]}}}}],\"header\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Employee Status'\"}}}}}],\"selection\":[{\"properties\":{\"selectAllCheckboxEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"items\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}]}}}",
+          "filters": "[{\"name\":\"Filter3d538c46414769bae90b\",\"expression\":{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Table1\"}},\"Hierarchy\":\"IS_INACTIVE Hierarchy\"}},\"Level\":\"IS_INACTIVE\"}},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"isHiddenInViewMode\":false}]",
+          "height": 82.18,
+          "width": 299.97,
+          "x": 980.03,
+          "y": 0.00,
+          "z": 4000.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

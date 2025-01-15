@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Actual to Standard Hours Analysis"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8a14480f-9e0c-43e8-b9a8-c4f20a541360"
+  }
+}

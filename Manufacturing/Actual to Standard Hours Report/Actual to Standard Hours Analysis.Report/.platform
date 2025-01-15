@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Actual to Standard Hours Analysis"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "dfe77202-3d6d-408d-93b7-ce820453d7d4"
+  }
+}
